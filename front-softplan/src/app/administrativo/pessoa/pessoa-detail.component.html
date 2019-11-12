@@ -1,0 +1,100 @@
+﻿<as-breadcrumb [objeto]="breadcrumb">
+</as-breadcrumb>
+
+<form [formGroup]="pessoaForm">
+    <div class="panel-group">
+        <div class="panel panel-default">
+            <div class="ui-fluid">
+                <div class="ui-g">                 
+                    <fieldset class="fieldset box">
+                        <legend>Dados Gerais</legend>
+                        <div class="informacoesGerais box-body">                 
+                            <div class="ui-g-12 ui-md-3">
+                                <div class="form-group">
+                                    <label for="cpf"> CPF </label>
+                                    <input id="cpf"
+                                           type="text"
+                                           [dropSpecialCharacters]="false" 
+                                           mask="000.000.000-00"
+                                           [attr.maxlength]="14"
+                                           [attr.minlength]="14"
+                                           formControlName="cpf"
+                                           class="form-control input"
+                                           name="cpf"
+                                            required>
+                                </div>
+                            </div>
+
+                            <div class="ui-g-12 ui-xl-3 ui-lg-3 ui-md-3">
+                                <div class="form-group">
+                                    <label for="nome"> Nome </label>
+                                    <input asInputText="nome" id="nome" type="text" formControlName="nome"
+                                        class="form-control input" maxlength="120" name="nome" required>
+                                </div>
+                            </div>
+
+                            <div class="ui-g-12 ui-xl-3 ui-lg-3 ui-md-3">
+                                <div class="form-group">
+                                    <label for="email"> email </label>
+                                    <input id="email" type="text" formControlName="email"
+                                        class="form-control input" maxlength="120" name="email">
+                                </div>
+                            </div>
+
+                            <div class="ui-g-12 ui-md-2 form-group">
+                                <label for="dataNascimento"> Data Nascimento </label>
+                                <p-calendar dateFormat="dd/mm/yy" 
+                                            formControlName="dataNascimento" 
+                                             [locale]="pt_BR"
+                                             [showIcon]="true"
+                                             required
+                                             >
+                                </p-calendar>
+                            </div>
+
+                            <div class="ui-g-12 ui-xl-3 ui-lg-3 ui-md-3">
+                                <div class="form-group">
+                                    <label for="naturalidade"> Naturalidade </label>
+                                    <input id="email" type="text" formControlName="naturalidade"
+                                        class="form-control input" maxlength="120" name="naturalidade" >
+                                </div>
+                            </div>
+
+                            <div class="ui-g-12 ui-xl-3 ui-lg-3 ui-md-3">
+                                <div class="form-group">
+                                    <label for="nacionalidade"> Nacionalidade </label>
+                                    <input id="nacionalidade" type="text" formControlName="nacionalidade"
+                                        class="form-control input" maxlength="120" name="nacionalidade" >
+                                </div>
+                            </div>
+
+                            <div class="ui-sm-12 ui-md-6 ui-lg-3">
+                                <label> Sexo </label>
+                                <div class="fieldset-input">
+                                    <fieldset>
+                                        <label class="radio-inline" style="width: 50%;">
+                                            <input type="radio" id="masculino" value="M" formControlName="sexo"
+                                                checked> Masculino
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" id="feminino" value="F" formControlName="sexo">
+                                            Feminino
+                                        </label>
+                                    </fieldset>
+                                </div>
+                            </div>
+    
+
+
+                        </div>
+                    </fieldset>
+                </div>   
+            </div>
+            <div class="panel-footer">
+                <button type="button" class="btn pull-right btnSalvar" [disabled]="!pessoaForm.valid" (click)="save()">Salvar</button>
+                <button type="button" class="btn pull-left btnVoltar" (click)="cancel()">Voltar</button>
+                <button type="button" class="btn pull-left btnLimpar" (click)="limpar()">Limpar</button>
+            </div>
+        </div>
+    </div>
+</form>

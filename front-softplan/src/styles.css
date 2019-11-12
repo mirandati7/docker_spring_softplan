@@ -1,0 +1,594 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+/*!
+ *  STYLE CSS v0.1
+!*/
+
+.btnNovo {
+    text-align-last: center;
+    padding: 1px 2px 2px 1px;
+    width: 75px;
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #fff;
+    background-color: #00a65a;
+    border-color: #008d4c;
+}
+
+.btnNovo:hover {
+    background-color: #009000;
+    border-color: #009000;
+    color: #fff !important;
+}
+
+.btnFiltrar {
+    text-align-last: center;
+    padding: 1px 2px 2px 1px;
+    width: 75px;
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #fff;
+    background-color: #3c8dbc;
+    border-color: #367fa9;
+}
+
+.btnFiltrar:hover {
+    background-color: #32759c;
+    border-color: #32759c;
+    color: #fff !important;
+}
+
+.btnSalvar {
+    text-align-last: center;
+    padding: 1px 2px 2px 1px;
+    width: 75px;
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #fff;
+    background-color: #00a65a;
+    border-color: #008d4c;
+}
+
+.btnSalvar:hover {
+    background-color: #009000;
+    border-color: #009000;
+    color: #fff !important;
+}
+
+.btnVoltar {
+    text-align-last: center;
+    padding: 1px 2px 2px 1px;
+    width: 75px;
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #fff;
+    background-color: #f39c12;
+    border-color: #e08e0b;
+}
+
+.btnVoltar:hover {
+    background-color: #e08e0b;
+    ;
+    border-color: #e08e0b;
+    color: #fff!important;
+}
+
+.btnLimpar {
+    text-align-last: center;
+    padding: 1px 2px 2px 1px;
+    width: 75px;
+    height: 34px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: #fff;
+    background-color: #bbbcbd;
+    border-color: #b1b1b2;
+}
+
+.btnLimpar:hover {
+    background-color: #b1b1b2;
+    ;
+    border-color: #b1b1b2;
+    color: #fff!important;
+}
+
+
+/* Método para remover as bordas e os espaçamentos das TabView do PrimeNG */
+
+.ui-tabview .ui-tabview-nav {
+    padding: 0px 0px 0px 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 0px;
+}
+
+
+/* Método responsável pelas alterações na aba Primária das TabView do PrimeNG*/
+
+.ui-tabview .ui-tabview-nav>li.ui-state-default.ui-state-active {
+    background: #ffffff!important;
+    font-weight: normal!important;
+    color: #000000!important;
+}
+
+
+/* Método responsável pelas alterações na aba Secundária das TabView do PrimeNG*/
+
+.ui-tabview .ui-tabview-nav>li.ui-state-default {
+    background: #d2d6de!important;
+}
+
+
+/* Método responsável pelas alterações de retirar do padding reescrita*/
+
+.ui-tabview .ui-tabview-panel {
+    border-width: 0!important;
+    ;
+    padding: 0em!important;
+    ;
+    background: none!important;
+    ;
+}
+
+
+/*Método responsável pela Validação dos Inputs*/
+
+.validacao {
+    text-align: center;
+    background-color: #ffc6c6;
+    border-style: solid;
+    border-color: #e89292;
+    border-width: 2px;
+    border-radius: 2px;
+    box-shadow: 0px 0.5px 0.5px 0.5px #E89292;
+    margin-top: 1px;
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+#barraPesquisa {
+    padding: 10px 10px 41px 10px;
+}
+
+#containerGrid {
+    padding: 10px 10px 10px 10px;
+}
+
+#containerBreadcrumb {
+    padding: 5px 1px 4px 1px;
+}
+
+
+/*Método resposável por tornar a borda esquerda dos inputs válidos verde
+.ng-valid[required], .ng-valid.required {
+    border-left: 5px solid #42A948;
+}*/
+
+
+/*Método resposável por tornar a borda esquerda dos inputs não válidos/obrogatórios vermelho
+.ng-invalid:not(form) {
+    border-left: 5px solid #A94442;
+}
+*/
+
+.input.ng-invalid:not(form) {
+    border-left: 3px solid #a94442!important;
+}
+
+.input.ng-valid[required],
+.input.ng-valid.required {
+    border-left: 3px solid #42A948!important;
+}
+
+.pinputtext.ng-invalid {
+    border-left: 3px solid #a94442;
+}
+
+.pinputtext.ng-valid {
+    border-left: 3px solid #42A948;
+}
+
+.input.ng-invalid:not(p-autoComplete) {
+    border-left: 3px solid #a94442;
+}
+
+.pinputtext.ng-static {
+    border-left: 3px solid #42A948!important;
+}
+
+.input {
+    background-color: #ffffff!important;
+}
+
+.input::selection {
+    background: #d2d6de!important;
+}
+
+.input:focus {
+    border-bottom-color: #367fa9!important;
+    border-top-color: #367fa9!important;
+    border-right-color: #367fa9!important;
+    box-shadow: 1px 0px 2px 0px #3c8dba!important;
+}
+
+
+/*Método que define a cor dos panel-heading*/
+
+.panel-default>.panel-heading {
+    color: #fff!important;
+    background-color: #efefef!important;
+    border-color: #fff!important;
+}
+
+
+/*Método responsável por definir posição do Growl do PrimeNG*/
+
+.ui-growl {
+    position: fixed!important;
+    top: 60px!important;
+    right: 20px!important;
+    width: 20em!important;
+}
+
+.form-control {
+    padding: 1px 4px!important;
+}
+
+
+/* Efeito  Loading   */
+
+.loader,
+.loader:after {
+    border-radius: 50%;
+    width: 10em;
+    height: 10em;
+}
+
+.loader {
+    margin: 60px auto;
+    font-size: 10px;
+    position: relative;
+    text-indent: -9999em;
+    border-top: 1.1em solid rgba(60, 141, 188, 0.99);
+    border-right: 1.1em solid rgba(260, 260, 260, 0.0);
+    border-bottom: 1.1em solid rgba(260, 260, 260, 0.0);
+    border-left: 1.1em solid rgba(260, 260, 260, 0.0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-animation: load8 1.1s infinite linear;
+    animation: load8 1.1s infinite linear;
+}
+
+@-webkit-keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes load8 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+
+/*fim loading*/
+
+
+/* Altera a borda dos autocompletes e torna as letras digitadas maiúsculas*/
+
+.ui-autocomplete-input {
+    border-left-color: #a94442!important;
+    border-left-style: solid!important;
+    border-left-width: 3px!important;
+    text-transform: uppercase;
+}
+
+
+/*Altera o tamanho dos autocompletes
+ e mostra os valores em letras maiúsculas*/
+
+.ui-inputtext {
+    padding: 0.44em!important;
+}
+
+
+/* Altera a borda dos autocompletes*/
+
+.ui-state-filled {
+    border-left-color: #42A948!important;
+    border-left-width: 3px!important;
+}
+
+
+/*Altera a borda dos asinputtext*/
+
+.ui-input {
+    border-left-color: #a94442!important;
+    border-left-width: 3px!important;
+}
+
+.ui-inputtext.ui-corner-all.ui-state-default.ui-widget.ui-state-filled {
+    border-left-color: #42A948!important;
+    border-left-width: 3px!important;
+}
+
+.btn-adicionar {
+    background: #2399e5;
+    border: 1px solid #1f89ce !important;
+    color: #FFFFFF;
+    padding: 6px 7px !important;
+    width: 75px!important;
+    height: 34px!important;
+    margin-left: 2px;
+    margin-right: 2px!important;
+    text-align-last: center;
+}
+
+.btn-adicionar:hover {
+    background-color: rgba(0, 114, 181, 0.77);
+    border-color: rgba(0, 114, 181, 0.77);
+    color: #fff !important;
+}
+
+.div-btn {
+    padding-bottom: 14px!important;
+    padding-top: 10px!important;
+}
+
+.fieldset {
+    min-width: 100%;
+    padding: 5.5px;
+    margin: 1px;
+    width: 100%;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px !important;
+}
+
+
+.fieldset-totais {
+    min-width: 100%;
+    padding: 5.5px;
+    margin: 1px;
+    width: 100%;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px !important;
+    background-color: #E5EDFF;
+}
+
+.input-desabilitado {    
+    background-color:rgb(232, 234, 234)!important;        
+}
+
+
+.div-select {
+    width: 100%;
+    overflow: hidden;
+}
+
+.div-select select {
+    width: 90px;
+    height: 34px;
+    font-size: 12pt!important;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    padding: 0px 0px 0px 0px;
+    color: #000;
+    text-indent: 2.0px;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+input[type=radio] {
+    margin: 0px -21px!important;
+    width: 20px!important;
+    height: 20px!important;
+}
+
+input[type=checkbox] {
+    margin: 0px -21px!important;
+    width: 20px!important;
+    height: 20px!important;
+}
+
+.status-inativo {
+    border-bottom-style: solid!important;
+    background-color: rgb(251, 171, 161)!important;
+    width: 100%!important;
+    border-bottom: transparent;
+    position: relative;
+    top: -7px;
+    padding: 3px !important;
+    border-radius: 4px 4px 0px 0px;
+}
+
+.status-ativo {
+    border-bottom-style: solid!important;
+    background-color: rgb(130, 230, 185)!important;
+    width: 100%!important;
+    border-bottom: transparent;
+    position: relative;
+    top: -7px;
+    padding: 3px !important;
+    border-radius: 4px 4px 0px 0px;
+}
+
+
+/*Tooltip container*/
+
+.tooltipp {
+    position: relative!important;
+    display: inline-block!important;
+}
+
+
+/*Tooltip text*/
+
+.tooltipp .tooltipptext {
+    visibility: hiden!important;
+    width: 120px!important;
+    background-color: #555!important;
+    color: #fff!important;
+    text-align: center!important;
+    padding: 5px 0!important;
+    border-radius: 6px!important;
+    /*Position tooltip*/
+    position: absolute!important;
+    z-index: 1!important;
+    bottom: 125%!important;
+    left: 50%!important;
+    margin-left: -60px!important;
+    /*Fade in tooltip*/
+    opacity: 0!important;
+    transition: opacity 1s!important;
+}
+
+
+/*Tooltip arrow*/
+
+.tooltipp .tooltipptext::after {
+    content: ""!important;
+    position: absolute!important;
+    top: 100%!important;
+    left: 50%!important;
+    margin-left: -5px!important;
+    border-width: 5px!important;
+    border-style: solid!important;
+    border-color: #555 transparent transparent transparent!important;
+}
+
+
+/*Show the tooltip text when you mouse over the tooltip container*/
+
+.tooltipp:hover .tooltipptext {
+    visibility: visible!important;
+    opacity: 1!important;
+}
+
+.checkbox-inline+.checkbox-inline,
+.radio-inline+.radio-inline {
+    margin-top: 0!important;
+    margin-left: 0px!important;
+}
+
+.validacao {
+    padding-left: 10px;
+}
+
+.form-login {
+    margin-bottom: 10px
+}
+
+.asinput-text {
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid-status {
+    width: 40px;
+    text-align: center;
+    border-left-color: hsl(0, 77%, 46%);
+    border-left-style: solid;
+    border-left-width: 2px;
+}
+
+body {
+    background: #f3f3f3;
+    font-family: "Arial" !important;
+    font-size: "13px" !important;
+    color: #333333 !important;
+}
+
+.posiciona {
+    width: 100%;
+    padding: 0px 8px 0px 8px;
+    position: relative;
+    top: -9px;
+    height: 0px;
+}
+
+#posiciona {
+    background-color: rgba(204, 2, 2, 0.34);
+    font-size: 13px;
+    text-align: center;
+    border-radius: 4px;
+}
+.ui-fluid .ui-dropdown {
+    width: 100%!important;
+}
+.asinput-text.ng-untouched.ng-pristine.ng-valid.disabled{
+  background-color: #EEE9E9!important;
+}
+
+.ui-md-1, .ui-md-2, .ui-md-3, .ui-md-4, .ui-md-5, .ui-md-6, .ui-md-7, .ui-md-8, .ui-md-9, .ui-md-10, .ui-md-11, .ui-md-12 {
+    padding: .3em!important;
+ 
+}
+.ui-g-1, .ui-g-2, .ui-g-3, .ui-g-4, .ui-g-5, .ui-g-6, .ui-g-7, .ui-g-8, .ui-g-9, .ui-g-10, .ui-g-11, .ui-g-12 {
+    padding: .3em!important;
+ 
+}
+
+
+
+
+.ui-galleria-caption {
+    position: absolute;
+    left: 1px;      
+    padding: .2em 1em;
+    display: none!important ; 
+    
+}
+
+.ui-galleria-nav-next {
+    right: 5px;
+    cursor: pointer;
+    position: absolute;
+     content: "\F138";
+}
+
+
+.ui-galleria-filmstrip {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 2340px;
+    z-index: 900;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ui-shadow {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.3);
+}
+
+.content-section {
+    display: block;
+    border-bottom: 1px solid #dde3e6;
+    padding: 30px;
+    overflow: hidden;
+    background-color: #f5f7f8;
+}
+
+.ui-dialog {
+    position: fixed;
+    padding: 0;
+}
+
+.ui-cell-data {
+    display: block;
+}
+

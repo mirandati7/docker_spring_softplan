@@ -1,0 +1,76 @@
+  <div id="containerBreadcrumb">
+    <section class="content-header">
+      <div class="icon-breadcrumb">
+        <i class="fi-dashboard-graphic"></i>
+      </div>
+      <h1> 
+        Dashboard 
+        <small>{{version}}</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"> Home</a></li>          
+        <li class="active">Dashboard</li>
+      </ol>
+    </section>
+  </div>
+
+  <div class="row dashboard-panels">
+    <!-- ./col -->
+    <div class="ui-sm-6 ui-md-6 ui-lg-3">
+      <!-- small box -->
+      <div class="small-box bg-yellow">
+        <div class="inner">
+            {{dashboard.numeroVagas }}
+          <p>Pessoas cadastradas</p>
+        </div>
+        <div class="icon">
+          <i class="fi-ecommerce-shopping-basket"></i>
+        </div>
+        <a 
+        class="small-box-footer">Mais informações 
+        <i class="fi-interface-right-arrow"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="ui-sm-6 ui-md-6 ui-lg-3">
+      <!-- small box -->
+      <div class="small-box bg-green">
+        <div class="inner">
+            {{dashboard.numeroVagasAlocadas}}
+          <p>Pessoas Sexo Masculino</p>
+        </div>
+        <div class="icon">
+          <i class="fi-ecommerce-cash"></i>
+        </div>
+        <a routerLink="" class="small-box-footer">Mais informações <i class="fi-interface-right-arrow"></i></a>
+      </div>
+    </div>
+    <!-- ./col -->
+    <div class="ui-sm-6 ui-md-6 ui-lg-3">
+      <!-- small box -->
+      <div class="small-box bg-red">
+        <div class="inner">
+            {{dashboard.numeroVagasDisponiveis}}
+          <p>Pessoas Sexo Feminino </p>
+        </div>
+        <div class="icon">
+          <i class="fi-ecommerce-coins"></i>
+        </div>
+        <a class="small-box-footer">Mais informações <i class="fi-interface-right-arrow"></i></a>
+      </div>
+    </div>
+
+    <div class="ui-sm-6 ui-md-6 ui-lg-3">
+      <!-- small box -->
+      <div class="small-box bg-aqua">
+        <div class="inner">
+            {{dashboard.valorRecebido | number:'1.2-2'}}
+          <p>Total</p>
+        </div>
+        <div class="icon">
+          <i class="fi-dashboard-pie-graphic"></i>
+        </div>
+        <a  class="small-box-footer">Mais informações <i class="fi-interface-right-arrow"></i></a>
+      </div>
+    </div>
+  </div>

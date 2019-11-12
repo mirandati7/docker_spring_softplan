@@ -1,0 +1,145 @@
+/**************** CSS TELA DO LOGIN ***************/
+#login-block{
+    height: 100%;
+    padding: 5% 6% !important;
+}
+#login-block > .textLogin-block{
+    height: auto;
+    padding: 8% 0% !important;
+}
+#login-block > .boxLogin-block{
+    height: auto;
+    padding: 0% 0% !important;
+}
+.login-box{
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.47), 0 5px 23px 3px rgba(0, 0, 0, 0.18), 0 0px 8px 0 rgba(0, 0, 0, 0.22);
+    background: rgba(255, 255, 255, 0.8) !important;
+    padding: 15px;
+    padding-top: 35px;
+    border-radius: 3%;
+}
+.login-box, .register-box{
+    width: 390px;
+    margin: 0% auto;
+    margin-bottom: 30px;
+}
+.login-logo, .register-logo {
+    font-size: 35px;
+    text-align: center;
+    font-weight: 300;
+    margin: 0;
+}
+.login-logo > img{
+    width: 70%;
+    margin: 0px auto;
+}
+.login-box-msg, .register-box-msg {
+    text-align: left;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 26px;
+    font-weight: 200;
+    color: #000000cf;
+    padding: 0;
+    padding-bottom: 20px;
+}
+#login-box-text{
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 0px;
+}
+.login-box-body, .register-box-body{
+    background: transparent;
+    padding-bottom: 0px;
+}
+
+.login-box-body .glyphicon{
+    left: 8px;
+    color: #282828;
+}
+.login-box-body .has-feedback .form-control {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    padding-left: 40px !important;
+    border-radius: 0px;
+    border: 2px solid #afafaf;;
+    border-left-width: 3px;
+    border-left-color: #01b134;
+    height: 33px;
+    background: transparent;
+    color: #282828;
+}
+.login-box-body .has-feedback .form-control::placeholder {
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    color:    #282828;
+ }
+.login-box-body .has-feedback .form-control:focus {
+    border-color: #787777;
+    box-shadow: none;
+    border-left-color: #01b134;
+}
+.login-box-body .btn-block{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    background: #01b134 !important;
+    border-color: #03aa33;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+
+#login-box-text > h1{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-weight: 200;
+    color: white;
+    font-size: 78px;
+    line-height: 72px;
+}
+#login-box-text > h1 >span{
+    font-weight: 600;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 80px;
+    color: white;
+}
+#login-box-text > h2{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    color: white;
+    font-weight: 500;
+    font-size: 38px;
+    font-style: italic;
+    margin-top: 0px;
+}
+.icheck > label{
+    padding-left: 20px;
+    color: #525252;
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+}
+.icheck > label > input{
+    top: 5px;
+}
+.logo-araguaia{
+    float: right
+}
+.logo-araguaia > img{
+    width: 35%;
+    float: right;
+}
+.boxLogin-block > .login-hr{
+    border-top: 1px solid #5b5b5b;
+}
+.boxLogin-block > .login-reset{
+    width: 57%;
+    margin: 0 auto;
+}
+.boxLogin-block > .login-reset > p{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: white;
+    margin: 0;
+}
+.boxLogin-block > .login-reset > a{
+    font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 300;
+    color: white;
+}

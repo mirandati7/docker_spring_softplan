@@ -1,0 +1,5 @@
+{
+	"data": [
+		{"endpoint": "http://192.168.0.77:8888/","success": "Load Endpoint JSON with Sucess!"}
+	]
+}

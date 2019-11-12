@@ -1,0 +1,75 @@
+<div id="containerBreadcrumb">
+    <section class="content-header">
+        <div class="icon-breadcrumb">
+            <i class="fi-dashboard-dashboard"></i>
+        </div>
+        <h1>
+            Pessoa
+            <small>Pesquisa</small>
+        </h1>
+        <ol class="breadcrumb">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Administrativo</a></li>
+            <li class="active">Pessoa</li>
+        </ol>
+    </section>
+</div>
+
+<div class="panel-group">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btnNovo" (click)="novo()">Novo</button>
+                </div>
+
+                <input id="pesquisa"                        
+                       type="text"                        
+                       class="form-control" 
+                       asInputText="pesquisa"
+                       placeholder="Pesquisar por Nome " 
+                       [(ngModel)]="search.filters.pesquisa" 
+                       (keyup)="onkey($event)">
+
+                <div class="input-group-btn">
+                    <button type="submit" class="btn btnFiltrar" (click)="refresh()">Filtrar</button>
+                </div>
+            </div>
+        </div>
+        <div id="containerGrid">
+            <p-table [value]="_service.pageResult.content"
+                     [totalRecords]="_service.pageResult.totalElements"
+                     [rows]="_service.qtdeRegistros" 
+                     [responsive]="true" [lazy]="true"
+                     [paginator]="true" 
+                     (onLazyLoad)="loadPessoas($event)">
+
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width:50px;text-align:center">Editar</th> 
+                            <th *ngFor="let col of cols" [ngStyle]="col.style">
+                                    {{col.header}}
+                            </th>
+                        </tr>                   
+                    </ng-template>  
+                    
+                    <ng-template pTemplate="body" let-row>
+                        <tr>
+                            <td>
+                                <button class="btn btn-primary" 
+                                        type="button" 
+                                        (click)="editar(row.id)"
+                                        (keydown)="onKeydownDiv($event)">
+                                    <i class="fa fa-pencil"></i> 
+                                </button>
+                            </td>
+                            <td *ngFor="let col of cols" [ngStyle]="col.style">
+                                <span class="ui-column-title">{{col.header}}</span>
+                                <span class="ui-column-value">{{rowMaskService.rowMask(row, col, '1.2-2')}}</span>
+                            </td>
+                        </tr>                   
+                    </ng-template>  
+            </p-table>
+        </div>
+    </div>
+</div>

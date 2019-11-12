@@ -1,0 +1,27 @@
+.dashboard-panels{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.graphs-custom{
+    min-height: 320px;
+}
+
+.box-header .box-title{
+    margin-left: 5px; 
+}
+
+.dashboard-date-filter{
+    display: inline-flex;
+}
+
+.dashboard-date-filter > .data {
+    margin-right: 5px;
+}
+
+
+@media (max-width:768px){
+    .graphs-custom{
+        min-height: auto;
+    }
+}

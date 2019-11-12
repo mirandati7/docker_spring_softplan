@@ -1,0 +1,191 @@
+/**************** CSS RESPONSIVO TELA DO LOGIN - MUDANÇAS DE LARGURA ***************/
+/* Para zoom de 110% e acima */
+@media(max-width: 1250px){
+    #login-box-text > h1{
+        font-size: 69px;
+    }
+    #login-box-text > h1 > span{
+        font-size: 77px;
+    }
+}
+/* Para zoom de 90% */
+@media(min-width: 1390px){
+
+
+}
+/* Para zoom de 80% */
+@media(min-width: 1590px){
+
+
+}
+
+/* TABLETS */
+@media (min-width: 640px) and (max-width: 1024px) {
+    .login-box, .register-box{
+        width: 290px;
+    }
+    .login-box-text{
+        width: 90%;
+    }
+    #login-box-text > h1 {
+        font-size: 43px;
+        line-height: 39px;
+    }
+    #login-box-text> h1 > span{
+        font-size: 41px;
+    }
+    #login-box-text > h2 {
+        font-size: 25px;
+    }
+    .boxLogin-block > .login-reset{
+        width: 72%;
+        margin: 0 auto;
+    }
+    #login-block > .textLogin-block{
+        padding: 20% 0% !important; 
+    }
+}
+/* XS Portrait */
+@media (max-width: 480px) {
+    #login-block{
+        padding: 0% 6% !important; 
+    }
+    #login-block > .textLogin-block{
+        padding: 3% 0% !important;
+    }
+    #login-box-text{
+        margin-top: 0px;
+    }
+    #login-box-text > h1{
+        font-size: 40px;
+        line-height: 37px;
+        margin: 3px 0px;
+    }
+    #login-box-text > h1 > span{
+        font-size: 40px;
+    }
+    #login-box-text > h2{
+        font-size: 18px;
+        margin-top: 0px;
+    }
+    .login-box, .register-box{
+        width: 310px;
+        margin: 0% auto;
+        margin-bottom: 0px;
+        padding-top: 18px;
+    }
+    .login-box-msg, .register-box-msg{
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    .login-logo > img{
+        width: 60%;
+    }
+    .boxLogin-block > .login-reset{
+        width: 90%;
+    }
+    .boxLogin-block > .login-reset > p {
+        font-size: 17px;
+    }
+    .boxLogin-block > .login-reset > a {
+        font-size: 14px;
+    }
+}    
+/* Mobile Big  */
+@media (max-width: 390px) {
+    
+}
+/* Mobile Small */
+@media (max-width: 340px) {
+    #login-block > .textLogin-block{
+        padding: 2% 0% !important;
+    }
+    #login-box-text > h1{
+        font-size: 35px;
+        line-height: 35px;
+        margin: 2px 0px;
+    }
+    #login-box-text > h1 > span{
+        font-size: 35px;
+    }
+    #login-box-text > h2{
+        font-size: 18px;
+        margin-top: 0px;
+    }
+    .login-box, .register-box{
+        width: 280px;
+        margin: 0% auto;
+        margin-bottom: 0px;
+        padding-top: 18px;
+    }
+    .login-box-msg, .register-box-msg{
+        font-size: 20px;
+        padding-bottom: 5px;
+    }
+    .boxLogin-block > .login-reset > p {
+        font-size: 20px;
+    }
+    .boxLogin-block > .login-reset > a {
+        font-size: 16px;
+    }
+    .icheck > label {
+        font-size: 15px;
+    }
+}
+/* Mobile Deprecated */
+@media (max-width: 312px) {
+
+
+}
+
+
+/**************** CSS RESPONSIVO TELA DO LOGIN - MUDANÇAS DE ALTURA ***************/
+/* Altura */
+@media(max-height: 1525px){
+    #login-block {
+        height: 100%;
+        padding: 35% 6% !important;
+    }
+}
+
+@media(max-height: 1300px){
+    #login-block {
+        height: 100%;
+        padding: 20% 6% !important;
+    }
+}
+
+@media(max-height: 1225px){
+    #login-block {
+        height: 100%;
+        padding: 15% 6% !important;
+    }
+}
+
+@media(max-height: 925px){
+    #login-block {
+        height: 100%;
+        padding: 13% 6% !important;
+    }
+}
+
+@media(max-height: 825px){
+    #login-block {
+        height: 100%;
+        padding: 7% 6% !important;
+    }
+}
+
+@media(max-height: 725px){
+    #login-block {
+        height: 100%;
+        padding: 4% 6% !important;
+    }
+}
+
+@media(max-height: 625px){
+    #login-block {
+        height: 100%;
+        padding: 2% 6% !important;
+    }
+}

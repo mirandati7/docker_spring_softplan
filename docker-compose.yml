@@ -35,6 +35,17 @@ services:
       - db
     networks:
       - mr7-network
+  front-softplan:
+    image: front-softplan
+    build: .
+    ports:
+      - 9090:80
+    links:
+      - spring-boot-softplan
+    depends_on:
+      - spring-boot-softplan
+    networks:
+      - mr7-network 
 networks:
     mr7-network:
         driver: bridge
