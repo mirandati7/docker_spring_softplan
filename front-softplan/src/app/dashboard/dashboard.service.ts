@@ -16,11 +16,6 @@ export class DashboardService extends CrudService<Dashboard> {
         super(<any>_http, _message);
     }
 
-    public total(idPatio: Number) {        
-        return this.get(`${this.url}/total/`).toPromise().then(res => 
-              <Dashboard>res);     
-    }
-
 
     
 

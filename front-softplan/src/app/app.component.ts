@@ -197,7 +197,7 @@ export class AppComponent implements OnInit{
 
   private recuperarSessao(){
     //CASO TIVER AUTENTICAÇÃO VOLTA COM AS PERMISSÕES DO USUÁRIO
-    this.user = this.cookieService.get('user');
+    this.user = this.cookieService.get('username');
     sessionStorage.removeItem("usuarioLogado");
     localStorage.removeItem("usuarioLogado");
     let login = JSON.parse(this.user);

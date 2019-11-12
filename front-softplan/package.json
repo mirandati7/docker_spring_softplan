@@ -5,7 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --aot",
     "build-prod": "bash ./scripts/ng.sh build --prod --aot --env=prod",
     "test": "ng test",
     "lint": "ng lint",

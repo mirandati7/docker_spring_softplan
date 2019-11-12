@@ -138,22 +138,24 @@ export abstract class GenericService {
 
     private handleError(error: any) {
 
-        let _body = error._body ? JSON.parse(error._body) : undefined;
-        let errMsg = error.message || 'Server error';
+		let _body = error._body ? JSON.parse(error._body) : undefined;
+        let errMsg = error.error.message || 'Server error';
 
-        if (_body.message == "Sessão expirou!"){
+        if (errMsg == "Sessão expirou!") {
             alert("Sessão Expirou. Faça Login Novamente");
             localStorage.clear();
             sessionStorage.clear();
             window.location.href = "/";
         }
 
-        if (_body.businessException) {
+        if (errMsg.businessException) {
             errMsg = _body.businessException.message;
             this._message.info(errMsg);
         }
 
         return observableThrowError(errMsg);
+
+
     }
 
     public authSession(){

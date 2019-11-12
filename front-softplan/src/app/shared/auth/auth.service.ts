@@ -116,9 +116,10 @@ export class AuthService extends GenericService {
               localStorage.setItem(AuthService.AUTH_TOKEN,  usuario.token);
               sessionStorage.setItem(AuthService.AUTH_TOKEN, usuario.token);
               this.afterAuthenticate.next(usuario);
-        });
-
-
+        },
+        error => {
+          this._message.info('Usuário ou senha incorretos. Por favor tente novamente.');
+      });
 
         return this.afterAuthenticate;       
     }

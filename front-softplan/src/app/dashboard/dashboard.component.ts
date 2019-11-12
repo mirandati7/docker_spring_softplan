@@ -45,16 +45,7 @@ export class DashboardComponent implements OnInit {
     }
 
     atualizarDados() {
-        /***
-         *  Passando fixo depois alterar para ter uma autocomplete para escolher o Patio
-         * 
-         *  */ 
-        this.idPatio = 1;
-        this._dashboardService.total(this.idPatio).then(res => {
-            this.dashboard = res;
-        });
-
-       
+              
     }
 
 
