@@ -36,8 +36,10 @@ services:
     networks:
       - mr7-network
   front-softplan:
-    image: front-softplan
-    build: .
+    image: mirandati7/front-softplan
+    restart: always
+    build: ./front-softplan
+    working_dir: /front_softplan
     ports:
       - 9090:80
     links:
