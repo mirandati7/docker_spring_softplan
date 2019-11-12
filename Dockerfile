@@ -1,2 +1,2 @@
-FROM mysql:5.7.22
-EXPOSE 3310
+FROM postgres:10.10
+EXPOSE 5462 

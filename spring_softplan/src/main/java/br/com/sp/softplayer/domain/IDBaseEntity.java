@@ -15,7 +15,7 @@ public class IDBaseEntity implements BaseEntity<Long>{
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "data_cadastro",  nullable = false)
+	@Column(name = "data_cadastro",  nullable = true)
 	private LocalDateTime dataCadastro;
 	
 
