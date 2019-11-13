@@ -30,15 +30,28 @@ __Imagens DockerHUB__
 docker pull mirandati7/postgres-spring-boot-softplan:latest
 docker pull mirandati7/spring-boot-softplan:latest
 docker pull mirandati7/front-softplan:latest
-
+```
 
 Telas da aplicação
 ------------------------------
-!["Login"](https://github.com/mirandati7/front-softplan/blob/master/screenshots/login.png "Login")
+!["Login"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/login.png "Login")
 
-!["Dashboard"](https://github.com/mirandati7/front-softplan/blob/master/screenshots/dashboard.png "Dashboard")
+!["Dashboard"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/dashboard.png "Dashboard")
 
-!["Pessoa"](https://github.com/mirandati7/front-softplan/blob/master/screenshots/pessoa-detail.png "Cadastro Pessoa")
+!["Pessoa"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/pessoa-detail.png "Cadastro Pessoa")
 
-!["Pessoa"](https://github.com/mirandati7/front-softplan/blob/master/screenshots/pessoa-list.png "Listagem Pessoa")
+!["Pessoa"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/pessoa-list.png "Listagem Pessoa")
 
+!["Tela"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/pessoa-list.png "Tela Responsiva")
+
+
+Tela endpoint /github
+------------------------------
+
+!["Endpoint"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/endpoint_github.png "Endpoint GitHUB")
+
+
+Tela SWAGGER DOCS
+----------------------------
+
+!["SWAGGER"](https://github.com/mirandati7/docker_spring_softplan/blob/master/front-softplan/screenshots/swagger-docs.png "Swagger DOCS")
