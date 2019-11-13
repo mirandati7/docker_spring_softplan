@@ -24,6 +24,11 @@ __Instalação da Aplicação VIA docker-compose__
 docker-compose up -d --build
 ```
 
+__URL para acessar a aplicação__
+``` 
+ http://localhost:9090
+```
+
 __Imagens DockerHUB__
 - Clone to your machine
 ```
