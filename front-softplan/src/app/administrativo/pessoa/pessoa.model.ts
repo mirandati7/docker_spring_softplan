@@ -10,5 +10,6 @@ export class Pessoa extends GenericModel {
     public cpf                : String;
     public naturalidade       : String;
     public nacionalidade      : String;
+    public mensagem           : String;
 
 }

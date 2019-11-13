@@ -64,7 +64,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		                    "/**/*.css",
 		                    "/**/*.js"
 		            ).permitAll()				
-				.antMatchers("/authenticate").permitAll()				
+				.antMatchers("/authenticate").permitAll()	
+				.antMatchers("/github").permitAll()
 				.antMatchers(HttpMethod.OPTIONS, "/**").permitAll()
 				.anyRequest().authenticated().and()
 				.exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()

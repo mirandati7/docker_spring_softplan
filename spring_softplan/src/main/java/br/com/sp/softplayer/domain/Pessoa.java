@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "pessoa")
@@ -38,7 +39,10 @@ public class Pessoa extends IDBaseEntity {
 	
 	@Column(name = "nacionalidade", nullable = true, length = 100)
 	private String nacionalidade;
-
+	
+	@Transient
+	private String mensagem;
+	
 	public String getNome() {
 		return nome;
 	}
@@ -95,5 +99,13 @@ public class Pessoa extends IDBaseEntity {
 		this.nacionalidade = nacionalidade;
 	}
 
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
+	}
+	
 	
 }

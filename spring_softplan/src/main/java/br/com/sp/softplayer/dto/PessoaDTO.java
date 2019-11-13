@@ -26,6 +26,7 @@ public class PessoaDTO extends EntidadeDTO {
 	
 	private String nacionalidade;
 	
+	private String mensagem;
 	
 	public String getNome() {
 		return nome;
@@ -81,6 +82,14 @@ public class PessoaDTO extends EntidadeDTO {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getMensagem() {
+		return mensagem;
+	}
+
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
 	
 	

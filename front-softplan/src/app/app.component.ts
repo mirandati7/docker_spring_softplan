@@ -92,7 +92,6 @@ export class AppComponent implements OnInit{
   }
 
   private refreshPage(){
-    this.listarSetups();
     this.pagesActive++;
 
     if(isNaN(this.pagesActive)){
@@ -112,11 +111,11 @@ export class AppComponent implements OnInit{
       if(authToken != null){
         localStorage.setItem("authToken", authToken);
         this.usuarioLogado = JSON.parse(usuarioLogado);
-        this.user = this.cookieService.get('user');
+        this.user = this.cookieService.get('username');
         if(this.user == ''){
           this.login.login = this.usuarioLogado.login;
           this.login.password = this.usuarioLogado.senha;
-          this.cookieService.set('user', JSON.stringify(this.login), 365);
+          this.cookieService.set('username', JSON.stringify(this.login), 365);
         }
         this.globalsVariablesService.setGlobalsVariables(this.usuarioLogado);
       }else{
@@ -124,11 +123,11 @@ export class AppComponent implements OnInit{
         if(authToken != null){
           sessionStorage.setItem("authToken", authToken);
           this.usuarioLogado = JSON.parse(usuarioLogado);
-          this.user = this.cookieService.get('user');
+          this.user = this.cookieService.get('username');
           if(this.user == ''){
             this.login.login = this.usuarioLogado.login;
             this.login.password = this.usuarioLogado.senha;
-            this.cookieService.set('user', JSON.stringify(this.login), 365);
+            this.cookieService.set('username', JSON.stringify(this.login), 365);
           }
           this.globalsVariablesService.setGlobalsVariables(this.usuarioLogado);
         }else{
@@ -196,23 +195,16 @@ export class AppComponent implements OnInit{
   }
 
   private recuperarSessao(){
-    //CASO TIVER AUTENTICAÇÃO VOLTA COM AS PERMISSÕES DO USUÁRIO
     this.user = this.cookieService.get('username');
     sessionStorage.removeItem("usuarioLogado");
     localStorage.removeItem("usuarioLogado");
-    let login = JSON.parse(this.user);
-    this.authService.autenticarUsuario(login).subscribe(res => {
-      this.usuarioLogado = res;
-      this.globalsVariablesService.setGlobalsVariables(this.usuarioLogado);
-    });
-    
   }
 
   private resetSessao(){
       sessionStorage.clear();
       localStorage.clear();
       localStorage.setItem("PagesActive","1");
-      this.cookieService.delete('user');
+      this.cookieService.delete('username');
       this.globalsVariablesService.blockedGlobalsVariables();
       this._router.navigate(['/login']);
   }
@@ -239,12 +231,6 @@ export class AppComponent implements OnInit{
     return sessionStorage.getItem("rota");
   }
   
-  public listarSetups() {
-  
-  }
-
-  public carregarInformacoesSetup(res) {    
-  }
 
   
  

@@ -39,12 +39,10 @@ export class LoginComponent {
         this._authService.authenticate(this.loginModel).subscribe(res => {
             //this.authToken = res.data;
             this.authToken = res.token;
-
+            this._router.navigate(['/dashboard']);
             document.querySelector('body').classList.remove('backLogin');
         
             this._authService.autenticarUsuario(this.loginModel).subscribe(res => {
-  
-                
                 this.usuarioLogado = res;
                 if(this.usuarioLogado.login != '' && this.usuarioLogado.login != 'undefined'){
                         this.globalsVariablesService.setGlobalsVariables(this.usuarioLogado);

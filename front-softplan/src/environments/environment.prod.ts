@@ -1,6 +1,6 @@
 declare var require: any;
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080/softplan/',
+  apiUrl: 'http://127.0.0.1:8080/',
   version: require('../../package.json').version  
 };

@@ -3,6 +3,7 @@ package br.com.sp.softplayer.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,6 +40,32 @@ public class PessoaController extends GenericController<PessoaDTO, Pessoa, Pesso
 											  pageRequest);
 		return controllerManager.toPageResult(page, getDtoClass());
 
+	}
+	
+	@ResponseBody
+	@Override
+	@ApiOperation(value = "Salvar e alterar registro.")
+	@CrossOrigin
+	@SuppressWarnings("unchecked")
+	@RequestMapping(method = RequestMethod.POST)
+	public Long save(@RequestBody PessoaDTO dto) {
+		
+		if (dto.getId() == null) {
+			Pessoa pessoaCPF =  service.findByCPF(dto.getCpf());
+			
+			/**
+			 * Se existir pessoa com este CPF retorna 0
+			 * */
+			if (pessoaCPF != null) {
+				return 0L;
+			}
+			
+		}
+		
+		return (Long) service.save(
+				controllerManager.dtoToEntity(dto, getBeanClass())).getId();
+		
+	
 	}
 	
 	

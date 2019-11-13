@@ -1,4 +1,5 @@
-﻿<as-breadcrumb [objeto]="breadcrumb">
+﻿<br>
+<as-breadcrumb [objeto]="breadcrumb">
 </as-breadcrumb>
 
 <form [formGroup]="pessoaForm">
@@ -25,7 +26,7 @@
                                 </div>
                             </div>
 
-                            <div class="ui-g-12 ui-xl-3 ui-lg-3 ui-md-3">
+                            <div class="ui-g-12 ui-xl-6 ui-lg-6 ui-md-6">
                                 <div class="form-group">
                                     <label for="nome"> Nome </label>
                                     <input asInputText="nome" id="nome" type="text" formControlName="nome"
@@ -41,7 +42,7 @@
                                 </div>
                             </div>
 
-                            <div class="ui-g-12 ui-md-2 form-group">
+                            <div class="ui-g-12 ui-lg-3 ui-md-3 form-group">
                                 <label for="dataNascimento"> Data Nascimento </label>
                                 <p-calendar dateFormat="dd/mm/yy" 
                                             formControlName="dataNascimento" 
@@ -51,8 +52,16 @@
                                              >
                                 </p-calendar>
                             </div>
+                            
+                            <div class="ui-g-12 ui-lg-3 ui-md-3 form-group">
+                                <label for="sexos"> Sexo </label>
+                                <div class="form-group">
+                                    <p-dropdown [autoWidth]="true" [options]="sexos" [(ngModel)]="sexo" formControlName="sexo">
+                                    </p-dropdown>
+                                </div>
+                            </div>
 
-                            <div class="ui-g-12 ui-xl-3 ui-lg-3 ui-md-3">
+                            <div class="ui-g-12 ui-xl-3 ui-lg-6 ui-md-6">
                                 <div class="form-group">
                                     <label for="naturalidade"> Naturalidade </label>
                                     <input id="email" type="text" formControlName="naturalidade"
@@ -67,26 +76,13 @@
                                         class="form-control input" maxlength="120" name="nacionalidade" >
                                 </div>
                             </div>
-
-                            <div class="ui-sm-12 ui-md-6 ui-lg-3">
-                                <label> Sexo </label>
-                                <div class="fieldset-input">
-                                    <fieldset>
-                                        <label class="radio-inline" style="width: 50%;">
-                                            <input type="radio" id="masculino" value="M" formControlName="sexo"
-                                                checked> Masculino
-                                        </label>
-                                        <label class="radio-inline">
-                                            <input type="radio" id="feminino" value="F" formControlName="sexo">
-                                            Feminino
-                                        </label>
-                                    </fieldset>
-                                </div>
-                            </div>
-    
-
-
                         </div>
+                        <div class="ui-g-12 ui-md-12">
+                            <div *ngIf="formErrors.nome" class="validacao">
+                                <p align="left" padding-left=10px> {{formErrors.nome}}</p>
+                            </div>  
+                        </div>
+
                     </fieldset>
                 </div>   
             </div>

@@ -8,36 +8,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" >
   <br>
   <br>
   <br>
   <br>
   <br>
-<div class="login-box">
+<div class="login-box" >
   <div class="login-logo">
   </div>
   <!-- /.login-logo -->
   <div class="card">
-    <div class="card-body login-card-body">
-      <p class="login-box-msg">SOFTPLAN  </p>
-      <p class="login-box-msg">Usuario: softplayer</p>
-      <p class="login-box-msg"> Senha:  password </p>
+    <div class="card-body login-card-body">    
+      <p class="login-box-msg"><b><span style="text-align: center"> SOFTPLAN</span> </b>  </p>
+      <p class="login-box-msg"><b>Usuario: </b> softplayer</p>
+      <p class="login-box-msg"><b> Senha : </b> password </p>
       
       
      
       <form (ngSubmit)="logar()" class="login-box-body">
         <p class="login-box-msg">Entrar com:</p>
         <div class="form-group has-feedback form-login">
-            <input class="form-control form-login" placeholder="e-mail" value="" name="username" type="text" autofocus [(ngModel)]="loginModel.username"/>
+            <input class="form-control form-login" placeholder="username" value="" name="username" type="text" autofocus [(ngModel)]="loginModel.username"/>
             <span class="glyphicon glyphicon-user form-control-feedback"></span>
         </div>
         <div class="form-group has-feedback form-login">
-            <input class="form-control form-login" placeholder="senha" name="password" type="password" [(ngModel)]="loginModel.password"/>
+            <input class="form-control form-login" placeholder="password" name="password" type="password" [(ngModel)]="loginModel.password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-            <div class="col-xs-12">
+            <div class="w-100">
                 <button type="submit" id="btn-login-access" class="btn btn-primary btn-block btn-flat">Entrar</button>
             </div>     
         </div>

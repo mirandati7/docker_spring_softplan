@@ -13,6 +13,7 @@ import { Pessoa } from './pessoa.model';
 import { PessoaService } from './pessoa.service';
 import { ValidationService } from '../../shared/validacao/validation.service';
 import { ValidateBrService } from 'angular-validate-br';
+import { SelectItem } from '../../shared/primeng/common/api';
 
 @Component({
     templateUrl: './pessoa-detail.component.html',
@@ -26,6 +27,11 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
 
     breadcrumb: BreadcrumbModel = new BreadcrumbModel("Administrativo", "Pessoa", "Cadastro");
     pt_BR: any;
+   
+    sexos: SelectItem[];
+    sexo: any;
+
+
 
     constructor(public _route: ActivatedRoute,
         public _router: Router,
@@ -37,6 +43,10 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
         public globalsVariablesService: GlobalsVariablesService,
         private validateBrService: ValidateBrService
     ) {
+
+        this.sexos = [];
+        this.sexos.push({ label: 'Masculino', value: 1 });
+        this.sexos.push({ label: 'Feminino',  value: 2 });
 
     }
 
@@ -77,7 +87,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
     buildForm(): void {
         this.pessoaForm = this.fb.group({
             'id': [''],
-            'nome': [''],
+            'nome': ['',[Validators.required]],
             'sexo': [''],
             'email': [''],
             'dataNascimento': [''],
@@ -119,37 +129,11 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
     };
     validationMessages = {
         'nome': {
-            'required': 'Codigo é obrigatório!',
-            'minlength': 'Descrição no mínimo 4 caracteres !',
-            'maxlength': 'Descrição no máximo 24 caracteres !'
-        },        
-        'cpf': {
-            'required': 'CNPJ/Cpf é obrigatório ser valido '
-        }
+            'required': 'Nome é obrigatório!',
+        }    
+      
     }
  
-    public validarCpf(event) {
-
-        if (event.currentTarget.value.length > 0) {
-
-            this.pessoaForm.get('cpf').validator = Validators.minLength(14);
-            this.cpfValido = ValidationService.validarCPF(event.currentTarget.value);
-            this.pessoaForm.get('cpf').validator = Validators.required;
-
-            if (this.cpfValido == true) {
-                this.pessoaForm.controls.cpf.setErrors(null);
-                document.getElementById('cpf').setAttribute('required', 'true');
-
-            } else {
-                this.pessoaForm.controls.pessoaCnpjCpf.setErrors({ 'incorrect': true });
-                document.getElementById('cpf').setAttribute('required', 'true');
-
-            }
-        } else {
-            this.pessoaForm.get('cpf').clearValidators();
-            document.getElementById('cpf').classList.remove('ng-invalid');
-        }
-    }
 
 
     onBeforeSave() {
@@ -177,13 +161,22 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
             if (this.model.id == 0 || this.model.id == null) {
 
                 this._pessoaService.save(this.model).subscribe(res => {
-                    this._messages.success("Registro salvo com sucesso!");
+                    if (res == 0 ){
+                        this._messages.info("Já existe um registro com este CPF !");
+                    }else{
+                        this._messages.success("Registro salvo com sucesso !");
+                    }
+                   
                     this.limpar();
                 })
             }
             else {
                 this._pessoaService.save(this.model).subscribe(res => {
-                    this._messages.success("Registro alterado com sucesso!");
+                    if (res == 0 ){
+                        this._messages.info("Já existe um registro com este CPF !");
+                    }else{
+                        this._messages.success("Registro alterado com sucesso!");
+                    }
                     this.limpar();
                 })
             }

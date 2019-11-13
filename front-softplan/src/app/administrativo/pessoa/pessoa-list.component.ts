@@ -33,7 +33,7 @@ export class PessoaListComponent implements OnInit {
         this.cols = [                                
                 {field: 'nome',     header: 'Nome',  style:{'width':'40%','text-align':'left'},  type:'string'},
                 {field: 'email',    header: 'Email', style:{'width':'40%','text-align':'left'},  type:'string'},           
-                {field: 'cpf',      header: 'cpf',   style:{'width':'20%','text-align':'left',   type:'string'}}            
+                {field: 'cpf',      header: 'CPF',   style:{'width':'20%','text-align':'left',   type:'string'}}            
         ];
         document.getElementById('pesquisa').focus();
     }

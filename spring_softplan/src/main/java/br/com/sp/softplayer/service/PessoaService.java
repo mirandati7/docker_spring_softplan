@@ -1,5 +1,7 @@
 package br.com.sp.softplayer.service;
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -26,16 +28,15 @@ public class PessoaService extends GenericService<Pessoa, PessoaRepository> {
 	
 	@Override
 	public Pessoa save(Pessoa entity){
-		
-//		Pessoa pessoa = findByCPF(entity.getCpf());
-//		
-//		if (pessoa != null) {
-//			return repository.save(entity);	
-//		}
-//		
-//		
+			
+		if (entity.getId() != null) {
+			entity.setDataAlteracao(LocalDateTime.now());
+		}else {
+			entity.setDataCadastro(LocalDateTime.now());
+		}
 		
 		return repository.save(entity);
+		
 	}
 	
 	
