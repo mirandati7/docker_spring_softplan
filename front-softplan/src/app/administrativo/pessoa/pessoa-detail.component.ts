@@ -1,8 +1,7 @@
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Headers, Http, RequestOptions } from '@angular/http';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { BreadcrumbModel } from '../../shared/componentes/breadcrumb/breadcrumb.model';
 import { GenericModel } from '../../shared/model/generic.model';
@@ -12,7 +11,6 @@ import { Util } from '../../utilitarios/util';
 import { Pessoa } from './pessoa.model';
 import { PessoaService } from './pessoa.service';
 import { ValidationService } from '../../shared/validacao/validation.service';
-import { ValidateBrService } from 'angular-validate-br';
 import { SelectItem } from '../../shared/primeng/common/api';
 
 @Component({
@@ -27,7 +25,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
 
     breadcrumb: BreadcrumbModel = new BreadcrumbModel("Administrativo", "Pessoa", "Cadastro");
     pt_BR: any;
-   
+
     sexos: SelectItem[];
     sexo: any;
 
@@ -38,11 +36,9 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
         public _messages: MessageService,
         public fb: FormBuilder,
         public _pessoaService: PessoaService,
-         public _http: Http,
+         public _http: HttpClient,
         public http: HttpClient,
-        public globalsVariablesService: GlobalsVariablesService,
-        private validateBrService: ValidateBrService
-    ) {
+        public globalsVariablesService: GlobalsVariablesService) {
 
         this.sexos = [];
         this.sexos.push({ label: 'Masculino', value: 1 });
@@ -57,9 +53,9 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
     ativo: boolean = true;
     inativo: boolean = false;
     msgs: String[];
-    
+
     ngOnInit() {
-        
+
         this.pt_BR = Util.traducaoDataCalendar();
         this.buildForm();
 
@@ -91,7 +87,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
             'sexo': [''],
             'email': [''],
             'dataNascimento': [''],
-            'cpf': ['',[this.validateBrService.cpf]],
+            'cpf': [''],
             'naturalidade': [''],
             'nacionalidade': ['']
 
@@ -130,17 +126,17 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
     validationMessages = {
         'nome': {
             'required': 'Nome é obrigatório!',
-        }    
-      
+        }
+
     }
- 
+
 
 
     onBeforeSave() {
         this.model = this.pessoaForm.value;
     }
 
-  
+
 
 
     public limpar() {
@@ -154,7 +150,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
     public save() {
 
         this.onBeforeSave();
-        
+
 
 
         if (this.pessoaForm.valid) {
@@ -166,7 +162,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
                     }else{
                         this._messages.success("Registro salvo com sucesso !");
                     }
-                   
+
                     this.limpar();
                 })
             }
@@ -194,7 +190,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
         this.back();
     }
 
-  
+    /*
     public getRequestOptions(): any {
         let headers = new Headers();
         headers.append('Accept', 'application/json');
@@ -206,7 +202,16 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
         let options = new RequestOptions({ headers: headers });
         return options;
     }
+    */
 
+    public getRequestOptions(): any {
+
+      let authToken = localStorage.getItem('authToken');
+      let headersRequest = new HttpHeaders();
+      headersRequest = headersRequest.set('Authorization', `Bearer ${authToken}`).set('Accept', 'application/json');
+
+      return { headers: headersRequest };
+    }
     disabledElements(tipo: any) {
         let elements = document.querySelectorAll(tipo);
         let quant = elements.length;
@@ -233,7 +238,7 @@ export class PessoaDetailComponent<T extends GenericModel> implements OnInit {
         }
     }
 
-  
+
 
 }
 

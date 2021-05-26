@@ -3,7 +3,6 @@ import { HttpClientModule } from '@angular/common/http';
 import localeBr from '@angular/common/locales/pt';
 import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CookieService } from 'ngx-cookie-service';
@@ -21,7 +20,7 @@ import { GlobalsVariablesService } from './shared/service/global-variables.servi
 import { MessageService } from './shared/service/message.service';
 import { RowMaskService } from './shared/service/row-mask.service';
 
-// the second parameter 'fr' is optional 
+// the second parameter 'fr' is optional
 registerLocaleData(localeBr, 'pt');
 
 @NgModule({
@@ -31,7 +30,6 @@ registerLocaleData(localeBr, 'pt');
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpModule,
     GrowlModule,
     CalendarModule,
     AppRoutingModule,
@@ -42,27 +40,27 @@ registerLocaleData(localeBr, 'pt');
   declarations: [
     AppComponent,
     LoginComponent,
-    DashboardComponent    
+    DashboardComponent
   ],
   providers: [
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     {provide: LOCALE_ID, useValue: 'pt'},
     DashboardService,
-    DecimalPipe, 
-    RowMaskService, 
-    GlobalsVariablesService,     
-    AuthService, 
-    AuthGuard, 
-    CookieService, 
+    DecimalPipe,
+    RowMaskService,
+    GlobalsVariablesService,
+    AuthService,
+    AuthGuard,
+    CookieService,
     MessageService,
     UsuarioService,
     ConfirmationService,
   ],
   bootstrap: [
     AppComponent
-  ]  
+  ]
 })
 export class AppModule {
 
-} 
+}
 

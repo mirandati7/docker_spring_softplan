@@ -1,10 +1,9 @@
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import {throwError as observableThrowError, Observable} from 'rxjs';
 import {catchError} from 'rxjs/operators';
-import {URLSearchParams} from '@angular/http';
 import {MessageService} from './message.service';
 
 import { environment } from '../../../environments/environment';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 /**
  * Prepara um objeto para uma pesquisa get com parâmetros
@@ -19,13 +18,13 @@ export const objToSearchParams = (obj: any): URLSearchParams => {
 
 export const objToParams = (obj: any): HttpParams => {
     let params = new HttpParams();
-    
+
     for (let k in obj) {
-        
+
         if (obj[k]) {
-            params = params.set(k, obj[k]);            
+            params = params.set(k, obj[k]);
         }
-            
+
 
     }
 
@@ -56,21 +55,21 @@ export abstract class GenericService {
 
     public authToken: string = '';
     private _http: HttpClient;
-    protected _message: MessageService;    
+    protected _message: MessageService;
 
     public _endpoint:string = environment.apiUrl;
 
     constructor(_http: HttpClient, _message: MessageService) {
         this._http = _http;
-        this._message = _message;            
+        this._message = _message;
     }
 
     headers() {
 
-         let authToken = this.authSession(); 
+         let authToken = this.authSession();
          let headersRequest = new HttpHeaders();
          headersRequest = headersRequest.set('Authorization', `Bearer ${authToken}`).set('Content-Type', 'application/json');
- 
+
          return {headers: headersRequest};
     }
 
@@ -82,9 +81,9 @@ export abstract class GenericService {
     }
 
 
-    public postPromisse(url: string, param: Object): Promise<any> {        
-        let body = JSON.stringify(param);        
-        
+    public postPromisse(url: string, param: Object): Promise<any> {
+        let body = JSON.stringify(param);
+
         // Formacao do Endpoint
         url = this._endpoint + url;
 
@@ -92,7 +91,7 @@ export abstract class GenericService {
             .toPromise();
     }
 
-    
+
     /**
      * pesquisa paginada
      */
@@ -107,13 +106,13 @@ export abstract class GenericService {
         let options;
 
         if (params) {
-            
+
             let httpParams = objToParams(params);
             options = { params: httpParams, headers: this.headers() };
-            
+
             return this._http.get(url, options);
 
-        } else {    
+        } else {
             let HttpRequestHeader = this.headers();
             return this._http.get(url,  {headers: HttpRequestHeader.headers});
         }
@@ -128,7 +127,7 @@ export abstract class GenericService {
     }
 
     public inactivate(url: string, id: number) {
-        
+
         // Formacao do Endpoint
         url = this._endpoint + url;
 
